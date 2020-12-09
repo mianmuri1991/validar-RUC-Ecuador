@@ -1,0 +1,61 @@
+<!-- Pagina HTML sencilla para probar las validaciones -->
+<!-- Sientete libre de modificarla a tu gusto si deseas -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="RUC Ecuador">
+  <meta name="keywords" content="RUC,Ecuador,JavaScript">
+  <meta name="author" content="Miguel Angel Murillo Arteaga">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Probando RUC</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- Usando JQuery -->
+<script src="./validar_ruc_persona_juridica.js"></script>
+<script>
+	$(document).ready(function(){
+  $("button[name='b1']").click(function(){
+    var dato1 = $("input[name='user1']").val();
+    if(validar_RUC_1(dato1)==1){
+      $("div[name='resultado1']").text("Valido");
+    }
+    else{
+      $("div[name='resultado1']").text("Invalido");
+    }
+  });
+  $("button[name='b2']").click(function(){
+    var dato2 = $("input[name='user2']").val();
+    if(validar_RUC_2(dato2)==1){
+      $("div[name='resultado2']").text("Valido");
+    }
+    else{
+      $("div[name='resultado2']").text("Invalido");
+    }
+  });
+  $("button[name='b3']").click(function(){
+    var dato3 = $("input[name='user3']").val();
+    if(validar_RUC_3(dato3)==1){
+      $("div[name='resultado3']").text("Valido");
+    }
+    else{
+      $("div[name='resultado3']").text("Invalido");
+    }
+  });
+});
+</script>
+</head>
+<body>
+
+<p>Ingrese el RUC de una persona juridica privada: <input type="text" name="user1">
+<div name="resultado1"></div></p>
+<p>Ingrese el RUC de una persona juridica publica: <input type="text" name="user2">
+<div name="resultado2"></div></p>
+<p>Ingrese el RUC de una persona natural: <input type="text" name="user3">
+<div name="resultado3"></div></p>
+
+<button name="b1">Validar RUC persona juridica privada</button>
+<button name="b2">Validar RUC persona juridica publica</button>
+<button name="b3">Validar RUC persona natural</button>
+
+</body>
+</html>
